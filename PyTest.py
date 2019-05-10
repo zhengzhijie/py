@@ -4,8 +4,6 @@ Created on 2019年5月9日
 
 @author: zzj
 '''
-from _ast import If
-
 
 print ("hello world!")
 
