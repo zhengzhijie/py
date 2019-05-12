@@ -149,3 +149,130 @@ print alien
 print "--------------del alien['class']"
 del alien['class']
 print alien
+
+fav_languages = {
+    'zhangsan':'Java',
+    'lisi':'C',
+    'wangwu':'Python',
+    'wanger':'Python'
+}
+print fav_languages
+print("zhangsan's favorite language is " + 
+      fav_languages['zhangsan'].title() + ".")
+
+print '---------------------------------------------------'
+user_0 = {
+    'username':'zhengzhijie',
+    'firstname':'zheng',
+    'secondname':"zhijie"
+    }
+
+for k, v in user_0.items():
+    print "k=" + k + ", v=" + v
+for k in user_0.keys():
+    print k.title()
+
+print '---------------------------------------'
+names = ['zhangsan', 'chen', 'lisi']
+for name in names:
+    if name in fav_languages.keys():
+        print name + " is in fav_languages"
+    elif name not in fav_languages.keys():
+        print name + " is not in fav_languages"
+    else:
+        print name
+
+print '---------------------------sorted keys-------------------------'
+for name in sorted(fav_languages.keys()):
+    print name
+for name in sorted(fav_languages.values()):
+    print name
+print "-------------------------去重---------------------------"
+for name in set(fav_languages.values()):
+    print name
+
+'''
+嵌套：列表  字典 -- 在列表中嵌套字典，在字典中嵌套列表，在字典中嵌套字典
+'''
+print "-------------------------------------------------------嵌套"
+alien_0 = {'color':'white', 'age':18}
+alien_1 = {'color':'black', 'age':53}
+alien_2 = {'color':'blue', 'age':198}
+
+aliens = [alien_0, alien_1, alien_2]
+for alien in aliens:
+    print alien
+'''字典列表 or 在字典中存储列表（单键对应多值时）'''
+
+'''
+列表和字典的嵌套，层级不宜太多
+'''
+
+'''
+用户输入和 while循环
+两个问题：如何和用户交互 input(); 如何让程序持续运行while
+input的区别 
+    2中input(希望读取的是一个合法的表达式)， raw_input(所有输入看成字串)
+  3中input默认接收的是str类型
+'''
+# msg = input("Tell me something, then I will repeat it back to you: ")
+# print(msg)
+# name = raw_input("Please input your name: ")
+# print("hello " + name + "!")
+
+# prompt = "Please input your age: "
+# age = ""
+# acitve = True
+# while acitve:
+#     age = raw_input(prompt)
+#     if age == 'q':
+#         acitve = False
+#         break
+#     age = int(age)
+#     
+#     if age % 2 == 0:
+#         print str(age) + " is even"
+#     else:
+#         print str(age) + " is odd"
+# print "game over\n"
+
+print "--------------------------------"
+'''
+break、continue的使用
+'''
+for n in range(10):
+    if n % 2 == 0:
+        continue
+    print n
+##########################################################
+'''
+for and while
+for循环是一种遍历列表的有效方式，但for循环中不应修改列表，这时while起到作用
+'''
+
+unconfirmed = ['a', 'b', 'c', 'a', 'b', 'c']
+confirmed = []
+while unconfirmed:
+    check = unconfirmed.pop(0)
+    confirmed.append(check)
+print 'unconfirmed : ' + str(unconfirmed)
+print 'confirmed : ' + str(confirmed)
+
+while 'a' in confirmed:
+    confirmed.remove('a')
+print "remove a ---"
+print 'unconfirmed : ' + str(unconfirmed)
+print 'confirmed : ' + str(confirmed)
+
+# responses = {}
+# active = True
+# while active:
+#     name = raw_input('what is your name: ')
+#     response = raw_input('what are you like: ')
+#     responses[name] = response
+#     repeat = raw_input('do? (yes/no)')
+#     if repeat == 'no':
+#         active = False
+# print responses
+
+########################################################函数
